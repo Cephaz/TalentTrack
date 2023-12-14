@@ -6,4 +6,4 @@ docker-compose up -d
 
 # rails locally
 
-rails s
+./bin/dev

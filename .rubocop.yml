@@ -1,0 +1,28 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.2.2
+  # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
+  # to ignore them, so only the ones explicitly set in this file are enabled.
+  DisabledByDefault: true
+  SuggestExtensions: false
+  Exclude:
+    - "app/javascript/**/*"
+    - "app/assets/**/*"
+    - "app/views/**/*.erb"
+    - "lib/tasks/**/*"
+    - ".vscode/**/*"
+    - ".husky/**/*"
+    - ".bundle/**/*"
+    - "**/log/**/*"
+    - "**/public/**/*"
+    - "**/tmp/**/*"
+    - "**/templates/**/*"
+    - "**/vendor/**/*"
+    - "node_modules/**/*"
+    - "bin/**/*"
+    - "config/webpack/**/*"
+    - "db/schema.rb"

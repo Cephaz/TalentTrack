@@ -1,0 +1,33 @@
+# config/locales/fr.yml
+
+fr:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "La validation a échoué : %{errors}"
+      attributes:
+        '*':
+          '*':
+            blank: "ne peut pas être vide"
+            taken: "est déjà pris"
+            too_short: "est trop court (au moins %{count} caractères requis)"
+            too_long: "est trop long (au plus %{count} caractères autorisés)"
+            invalid: "est invalide"
+            confirmation: "ne correspond pas à la confirmation"
+            not_a_number: "n'est pas un nombre"
+            not_an_integer: "doit être un nombre entier"
+            not_valid_email: "n'est pas une adresse e-mail valide"
+            not_unique: "doit être unique"
+  errors:
+    format: '%{attribute} %{message}'
+    messages:
+      blank: 'ne peut pas être vide'
+      taken: 'est déjà pris'
+      too_short: 'est trop court (au moins %{count} caractères requis)'
+      too_long: 'est trop long (au plus %{count} caractères autorisés)'
+      invalid: 'est invalide'
+      confirmation: 'ne correspond pas à la confirmation'
+      not_a_number: "n'est pas un nombre"
+      not_an_integer: "doit être un nombre entier"
+      not_valid_email: "n'est pas une adresse e-mail valide"
+      not_unique: "doit être unique"

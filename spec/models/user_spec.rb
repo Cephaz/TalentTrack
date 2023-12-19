@@ -3,5 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'User creation' do
+    let(:user) { create(:user) }
+
+    it 'creates a valid user' do
+      expect(user).to be_valid
+    end
+  end
 end

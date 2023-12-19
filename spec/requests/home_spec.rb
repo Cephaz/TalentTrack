@@ -4,6 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'Homes' do
   describe 'GET /index' do
-    pending "add some examples (or delete) #{__FILE__}"
+    it 'returns a 200 OK status' do
+      get root_path
+      expect(response).to have_http_status(:ok)
+    end
   end
 end

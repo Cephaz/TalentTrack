@@ -10,9 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_14_155347) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_19_102547) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "job_applications", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "job_offer_id", null: false
+    t.string "status"
+    t.date "application_date"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_offer_id"], name: "index_job_applications_on_job_offer_id"
+    t.index ["user_id"], name: "index_job_applications_on_user_id"
+  end
+
+  create_table "job_languages", force: :cascade do |t|
+    t.bigint "job_offer_id", null: false
+    t.bigint "programming_language_id", null: false
+    t.string "level"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_offer_id"], name: "index_job_languages_on_job_offer_id"
+    t.index ["programming_language_id"], name: "index_job_languages_on_programming_language_id"
+  end
+
+  create_table "job_offers", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "company"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "programming_languages", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_programming_languages_on_name", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,4 +68,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_14_155347) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "job_applications", "job_offers"
+  add_foreign_key "job_applications", "users"
+  add_foreign_key "job_languages", "job_offers"
+  add_foreign_key "job_languages", "programming_languages"
 end

@@ -62,7 +62,9 @@ group :development, :test do
   gem 'dotenv-rails'
 
   # Unit tests
+  gem 'factory_bot_rails'
   gem 'rspec-rails'
+  gem 'faker'
 
   # Linter Ruby
   gem 'rubocop', require: false

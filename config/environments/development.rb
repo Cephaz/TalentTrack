@@ -43,7 +43,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'mailcatcher',
+    address: ENV.fetch('MAILCATCHER_HOST', 'localhost'),
     port: 1025
   }
   config.action_mailer.perform_caching = false

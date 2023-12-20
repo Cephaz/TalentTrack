@@ -1,6 +1,9 @@
 # config/locales/fr.yml
 
 fr:
+  support:
+    array:
+      words_connector: " et "
   activerecord:
     errors:
       messages:
@@ -31,3 +34,13 @@ fr:
       not_an_integer: "doit être un nombre entier"
       not_valid_email: "n'est pas une adresse e-mail valide"
       not_unique: "doit être unique"
+  actions:
+    register: "S'inscrire"
+    login: "Se connecter"
+    logout: "Se déconnecter"
+    edit: "Modifier"
+    update: "Mettre à jour"
+  account:
+    edit: "Modifier le compte"
+  navigation:
+    back: "Retour"

@@ -4,6 +4,8 @@ fr:
   devise:
     confirmations:
       confirmed: "Votre compte a été validé."
+      currently_waiting: "En attente de confirmation pour : %{email}"
+      resend_instructions: "Renvoyer les instructions de confirmation"
       send_instructions: "Vous allez recevoir les instructions nécessaires à la confirmation de votre compte dans quelques minutes."
       send_paranoid_instructions: "Si votre e-mail existe dans notre base de données, vous allez bientôt recevoir un e-mail contenant les instructions de confirmation de votre compte."
     failure:
@@ -31,8 +33,14 @@ fr:
       failure: "Nous n'avons pas pu vous authentifier via %{kind} : '%{reason}'."
       success: "Authentifié avec succès via %{kind}."
     passwords:
+      change_password: "Changer votre mot de passe"
+      new_password: "Nouveau mot de passe"
+      minimum_length: "Minimum de %{count} caractères"
+      confirm_new_password: "Confirmez le nouveau mot de passe"
+      change_password_button: "Changer mon mot de passe"
+      forgot_password: "Mot de passe oublié ?"
       no_token: "Vous ne pouvez accéder à cette page sans passer par un e-mail de réinitialisation de mot de passe. Si vous êtes passé par un e-mail de ce type, assurez-vous d'utiliser l'URL complète."
-      send_instructions: "Vous allez recevoir les instructions de réinitialisation du mot de passe dans quelques instants."
+      send_instructions: "Envoyez-moi la réinitialisation du mot de passe"
       send_paranoid_instructions: "Si votre e-mail existe dans notre base de données, vous allez recevoir un lien de réinitialisation par e-mail."
       updated: "Votre mot de passe a été édité avec succès, vous êtes maintenant connecté."
       updated_not_active: "Votre mot de passe a été changé avec succès."
@@ -45,6 +53,9 @@ fr:
       update_needs_confirmation: "Votre compte a bien été mis à jour mais nous devons vérifier votre nouvelle adresse email. Merci de vérifier vos emails et de cliquer sur le lien de confirmation pour finaliser la validation de votre nouvelle adresse."
       updated: "Votre compte a été modifié avec succès."
       updated_but_not_signed_in: "Votre compte a été modifié avec succès. Merci de vous reconnecter."
+      current_password: "Votre mot de passe actuel"
+      leave_blank: "Laissez vide si vous ne souhaitez pas le changer"
+      minimum_length: "Minimum de %{count} caractères"
     sessions:
       signed_in: "Connecté."
       signed_out: "Déconnecté."

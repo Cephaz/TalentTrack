@@ -11,9 +11,12 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="flex h-screen bg-background">
     <%= render 'shared/notification' %>
-    <%= render 'layouts/navbar' %>
-    <%= yield %>
+    <%= render 'shared/sidebar' %>
+
+    <main class="flex-1 flex flex-col overflow-hidden">
+      <%= yield %>
+    </main>
   </body>
 </html>

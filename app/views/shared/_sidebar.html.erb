@@ -1,0 +1,38 @@
+<!-- SIDEBAR -->
+<nav class="w-22 px-3 border-r border-gray-300 bg-white flex flex-col">
+  <!-- TOP -->
+  <div class="mb-auto">
+    <a href="/" class="hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mt-2">
+      <%= show_svg('logo_icon', class: 'w-6 h-6') %>
+    </a>
+  </div>
+  <!-- MID -->
+  <ul class="self-center">
+    <li class="hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mt-2">
+      <%= show_svg('logo_icon', class: 'w-6 h-6')%>
+    </li>
+    <li class="hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mt-2">
+      <%= show_svg('logo_icon', class: 'w-6 h-6')%>
+    </li>
+  </ul>
+  <!-- BOTTOM -->
+  <div class="mt-auto">
+    <% if current_user %>
+      <%= link_to edit_user_registration_path, class: "hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mb-2" do %>
+        <%= show_svg('edit_user_icon', class: 'w-6 h-6')%>
+      <% end %>
+
+      <%= button_to destroy_user_session_path, method: :delete, class: "hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mb-2" do %>
+        <%= show_svg('logout_icon', class: 'w-6 h-6')%>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_registration_path, class: "hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mb-2" do %>
+        <%= show_svg('register_icon', class: 'w-6 h-6')%>
+      <% end %>
+
+      <%= link_to new_user_session_path, class: "hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mb-2" do %>
+        <%= show_svg('login_icon', class: 'w-6 h-6')%>
+      <% end %>
+    <% end %>
+  </div>
+</nav>

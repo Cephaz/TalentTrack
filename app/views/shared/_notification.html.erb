@@ -1,5 +1,6 @@
 <%= return if flash.instance_variable_get(:@flashes).empty? %>
 
+<!-- NOTIFICATION -->
 <% flash.each do |type, msg| %>
   <div
     data-controller="notification"

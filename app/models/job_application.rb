@@ -3,5 +3,9 @@
 # JobApplication model
 class JobApplication < ApplicationRecord
   belongs_to :user
-  belongs_to :job_offer
+
+  validates :company_name, presence: true
+  validates :job_title, presence: true
+
+  scope :sorted, -> { order(application_date: :desc) }
 end

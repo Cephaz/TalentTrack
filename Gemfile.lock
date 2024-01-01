@@ -188,6 +188,7 @@ GEM
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pagy (6.2.0)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
@@ -375,6 +376,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   mailcatcher
+  pagy (~> 6.2)
   pg (~> 1.1)
   pry-rails
   puma (>= 5.0)

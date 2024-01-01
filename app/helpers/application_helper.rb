@@ -2,6 +2,7 @@
 
 # Application helper
 module ApplicationHelper
+  include Pagy::Frontend
   # rubocop:disable Rails/OutputSafety
   def show_svg(icon_name, options = {})
     file = Rails.root.join('app', 'assets', 'images', "#{icon_name}.svg").read

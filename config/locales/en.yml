@@ -38,3 +38,24 @@ en:
     edit: "Edit Account"
   navigation:
     back: "Back"
+  job_applications:
+    index:
+      title: "List of Job Applications"
+      notice: "Job applications loaded successfully."
+    show:
+      title: "Job Application Details"
+      notice: "Job application details loaded successfully."
+    new:
+      title: "New Job Application"
+    create:
+      success: "Job application created successfully."
+      failure: "Error creating the job application."
+    edit:
+      title: "Edit Job Application"
+    update:
+      success: "Job application updated successfully."
+      failure: "Error updating the job application."
+    destroy:
+      title: "Destroy Job Application"
+      success: "Job application deleted successfully."
+      failure: "Error deleting the job application."

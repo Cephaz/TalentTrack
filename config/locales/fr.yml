@@ -44,3 +44,24 @@ fr:
     edit: "Modifier le compte"
   navigation:
     back: "Retour"
+  job_applications:
+    index:
+      title: "Liste des candidatures"
+      notice: "Les candidatures ont été chargées avec succès."
+    show:
+      title: "Détails de la candidature"
+      notice: "Détails de la candidature chargés avec succès."
+    new:
+      title: "Nouvelle candidature"
+    create:
+      success: "Candidature créée avec succès."
+      failure: "Erreur lors de la création de la candidature."
+    edit:
+      title: "Modifier la candidature"
+    update:
+      success: "Candidature mise à jour avec succès."
+      failure: "Erreur lors de la mise à jour de la candidature."
+    destroy:
+      title: "Supprimer la candidature"
+      success: "Candidature supprimée avec succès."
+      failure: "Erreur lors de la suppression de la candidature."

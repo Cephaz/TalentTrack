@@ -7,4 +7,5 @@ Rails.application.routes.draw do
                                    sign_up: 'register' }
 
   root to: 'home#index'
+  resources :job_applications
 end

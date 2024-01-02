@@ -2,16 +2,40 @@
   <h2 class="text-2xl font-bold"> <%= t('job_applications.index.title') %></h2>
 </div>
 
-<%== pagy_nav(@pagy) %>
+<%= search_form_for @q, html: { class: "bg-white p-4 rounded shadow-md flex" } do |f| %>
+  <div class="flex-1 mr-4">
+    <%= f.label :company_name_cont, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= f.search_field :company_name_cont, class: "appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="flex-1 mr-4">
+    <%= f.label :application_date_gteq, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= f.date_field :application_date_gteq, class: "appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="flex-1 mr-4">
+    <%= f.label :application_date_lteq, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= f.date_field :application_date_lteq, class: "appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="flex-1 mr-4">
+    <%= f.label :application_status_eq, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= f.select :application_status_eq, JobApplication::APPLICATION_STATUS, { include_blank: true, class: "appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" } %>
+  </div>
+
+  <div class="flex-1">
+    <%= f.submit "Search", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  </div>
+<% end %>
 
 <div class="overflow-x-auto">
   <table class="min-w-full bg-white border border-gray-300">
     <thead>
       <tr>
-        <th class="py-2 px-4 border-b">Company Name</th>
+        <th class="py-2 px-4 border-b"><%= sort_link(@q, :company_name, default_order: :desc )%></th>
         <th class="py-2 px-4 border-b">Job Title</th>
-        <th class="py-2 px-4 border-b">Application Date</th>
-        <th class="py-2 px-4 border-b">Application Status</th>
+        <th class="py-2 px-4 border-b"><%= sort_link(@q, :application_date)%></th>
+        <th class="py-2 px-4 border-b"><%= sort_link(@q, :application_status)%></th>
         <th class="py-2 px-4 border-b">Job Description</th>
         <th class="py-2 px-4 border-b">Job Link</th>
         <th class="py-2 px-4 border-b">Interview Follow-Up</th>
@@ -19,23 +43,9 @@
       </tr>
     </thead>
     <tbody>
-      <% @job_applications.each do |job_application| %>
-        <tr>
-          <td class="py-2 px-4 border-b"><%= job_application.company_name %></td>
-          <td class="py-2 px-4 border-b"><%= job_application.job_title %></td>
-          <td class="py-2 px-4 border-b"><%= job_application.application_date %></td>
-          <td class="py-2 px-4 border-b"><%= job_application.application_status %></td>
-          <td class="py-2 px-4 border-b"><%= job_application.job_description %></td>
-          <td class="py-2 px-4 border-b"><%= job_application.job_link %></td>
-          <td class="py-2 px-4 border-b"><%= job_application.interview_follow_up %></td>
-          <!--<td class="py-2 px-4 border-b">
-            <%= link_to t('job_applications.show.title'), job_application, class: "text-blue-500 hover:underline mr-2" %>
-            <%= link_to t('job_applications.edit.title'), edit_job_application_path(job_application), class: "text-yellow-500 hover:underline mr-2" %>
-            <%= link_to t('job_applications.destroy.title'), job_application, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-red-500 hover:underline" %>
-          </td>
-          -->
-        </tr>
-      <% end %>
+      <%= render @job_applications %>
     </tbody>
   </table>
 </div>
+
+<%== pagy_nav(@pagy) %>

@@ -8,12 +8,11 @@
   </div>
   <!-- MID -->
   <ul class="self-center">
-    <li class="hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mt-2">
-      <%= show_svg('logo_icon', class: 'w-6 h-6')%>
-    </li>
-    <li class="hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mt-2">
-      <%= show_svg('logo_icon', class: 'w-6 h-6')%>
-    </li>
+    <% if current_user %>
+      <%= link_to job_applications_path, class: "hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mt-2" do %>
+        <%= show_svg('list_icon', class: 'w-6 h-6')%>
+      <% end %>
+    <% end %>
   </ul>
   <!-- BOTTOM -->
   <div class="mt-auto">

@@ -2,7 +2,7 @@
 
 # JobApplication model
 class JobApplication < ApplicationRecord
-  APPLICATION_STATUS = %w[Accepted Pending Rejected].freeze
+  APPLICATION_STATUS = %w[Pending Accepted Rejected].freeze
   belongs_to :user
 
   validates :company_name, presence: true

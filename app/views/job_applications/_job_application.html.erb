@@ -3,20 +3,20 @@
   <td class="py-2 px-4 border-b"><%= job_application.job_title %></td>
   <td class="py-2 px-4 border-b"><%= job_application.application_date %></td>
   <td class="py-2 px-4 border-b"><%= job_application.application_status %></td>
-  <td class="py-2 px-4 border-b"><%= job_application.job_description %></td>
   <td class="py-2 px-4 border-b"><%= job_application.job_link %></td>
-  <td class="py-2 px-4 border-b"><%= job_application.interview_follow_up %></td>
-  <!-- 
   <td class="py-2 px-4 border-b">
-    <%= link_to job_application, class: "hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mt-2" do %>
-      <%= show_svg('show_icon', class: 'w-6 h-6')%>
-    <% end %>
-    <%= link_to edit_job_application_path(job_application), class: "hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mt-2" do %>
-      <%= show_svg('edit_icon', class: 'w-6 h-6')%>
-    <% end %>
-    <%= link_to job_application, method: :delete,  data: { confirm: 'Are you sure?' }, class: "hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mt-2" do %>
-      <%= show_svg('trash_icon', class: 'w-6 h-6')%>
-    <% end %>
+    <div class="flex items-center">
+      <%= link_to job_application, class: "hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mr-2" do %>
+        <%= show_svg('show_icon', class: 'w-6 h-6')%>
+      <% end %>
+
+      <%= link_to edit_job_application_path(job_application), class: "hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center mr-2" do %>
+        <%= show_svg('edit_icon', class: 'w-6 h-6')%>
+      <% end %>
+
+      <%= button_to job_application, method: :delete, data: { confirm: 'Are you sure?' }, class: "hover:bg-interaction hover:text-background rounded-xl cursor-pointer w-12 h-12 flex items-center justify-center" do %>
+        <%= show_svg('trash_icon', class: 'w-6 h-6')%>
+      <% end %>
+    </div>
   </td>
-  -->
 <% end %>

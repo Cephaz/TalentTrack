@@ -1,0 +1,40 @@
+<%= form_with(model: @job_application, local: true, class: 'w-full max-w-lg') do |f| %>
+  <div class="mb-4">
+    <%= f.label :company_name, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+    <%= f.text_field :company_name, class: 'appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline' %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :job_title, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+    <%= f.text_field :job_title, class: 'appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline' %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :application_date, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+    <%= f.date_field :application_date, class: 'appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline' %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :application_status_eq, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= f.select :application_status_eq, JobApplication::APPLICATION_STATUS, class: "appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :job_description, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+    <%= f.text_area :job_description, class: 'appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline' %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :job_link, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+    <%= f.url_field :job_link, class: 'appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline' %>
+  </div>
+
+  <div class="mb-4">
+    <%= f.label :interview_follow_up, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+    <%= f.text_area :interview_follow_up, class: 'appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline' %>
+  </div>
+
+  <div class="flex items-center justify-between">
+    <%= f.submit 'Save', class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline' %>
+  </div>
+<% end %>

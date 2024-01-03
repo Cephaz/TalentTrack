@@ -1,5 +1,6 @@
 <div class="flex justify-between items-center mb-4">
   <h2 class="text-2xl font-bold"> <%= t('job_applications.index.title') %></h2>
+  <%= link_to 'New Job', new_job_application_path, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
 </div>
 
 <%= search_form_for @q, html: { class: "bg-white p-4 rounded shadow-md flex" } do |f| %>
@@ -36,9 +37,7 @@
         <th class="py-2 px-4 border-b">Job Title</th>
         <th class="py-2 px-4 border-b"><%= sort_link(@q, :application_date)%></th>
         <th class="py-2 px-4 border-b"><%= sort_link(@q, :application_status)%></th>
-        <th class="py-2 px-4 border-b">Job Description</th>
         <th class="py-2 px-4 border-b">Job Link</th>
-        <th class="py-2 px-4 border-b">Interview Follow-Up</th>
         <th class="py-2 px-4 border-b">Action</th>
       </tr>
     </thead>

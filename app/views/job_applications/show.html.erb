@@ -1,0 +1,27 @@
+<div class="container mx-auto mt-8">
+  <h1 class="text-3xl font-semibold mb-4">Job Application Details</h1>
+
+  <div class="bg-white p-8 rounded shadow-md">
+    <div class="mb-4">
+      <span class="font-semibold">Company Name:</span> <%= @job_application.company_name %>
+    </div>
+    <div class="mb-4">
+      <span class="font-semibold">Job Title:</span> <%= @job_application.job_title %>
+    </div>
+    <div class="mb-4">
+      <span class="font-semibold">Application Date:</span> <%= @job_application.application_date %>
+    </div>
+    <div class="mb-4">
+      <span class="font-semibold">Application Status:</span> <%= @job_application.application_status %>
+    </div>
+    <div class="mb-4">
+      <span class="font-semibold">Job Description:</span> <%= @job_application.job_description %>
+    </div>
+    <div class="mb-4">
+      <span class="font-semibold">Job Link:</span> <%= @job_application.job_link %>
+    </div>
+    <div class="mb-4">
+      <span class="font-semibold">Interview Follow-up:</span> <%= @job_application.interview_follow_up %>
+    </div>
+  </div>
+</div>
